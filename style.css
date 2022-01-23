@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Sedgwick+Ave&display=swap');
+
+
+:root{
+  --fontLogo: 'Sedgwick Ave', cursive, sans-serif;
+}
+
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+#logo{
+  font-family: var(--fontLogo);
+
+}
+a{
+  color:#000;
+  text-decoration: none;
+}
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(1em, 1em + 1vw, 1.5em);
+
+}
+
+#grid{
+  display:grid;
+  width: 100%;
+  height:100vh;
+  grid-template-columns: 100vw;
+  grid-template-rows: 10vh 2fr 10vh ;
+  grid-template-areas: "header" "main" "footer";
+  background:#1DD6C3;
+}
+
+
+header{
+  
+  grid-area: header;
+  background:#FFF;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:0 10px;
+ 
+}
+
+main{
+  background: #616161;
+  grid-area: main;
+  display:flex;
+  
+}
+
+footer{
+  background:#000;
+  grid-area: footer;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  font-size: .5rem;
+  color:#FFF;
+}
+
+#gridColors{
+  display:flex;
+  width:100%;
+  height:100%;
+  justify-content: space-around;
+  flex-direction: column;
+ 
+}
+#gridColors div{
+  width: 100%;
+  height: 20%;
+  display:flex;
+  justify-content: start;
+  align-items: end;
+}
+
+
+/*menu hambúrguer*/
+#menuToggle{
+  width:50px;;
+  height: 70%;
+  align-items: center;
+  justify-content: space-around;
+  display:flex;
+  padding:2px;
+  
+}
+#menuToggle.active div{
+  background:#000;
+  
+}
+#menuToggle div{
+  height:25%;
+  width: 25%;
+  border:1.3px solid #000;
+  border-radius: 100%;
+  
+}
+#navMenu{
+  position: fixed;
+  height:1px;
+  width:1px;
+  background:#FFF;
+  top:10vh;
+  right:0;
+  border-radius: 0 0 0 100%;
+  border-top:1px solid #616161;
+  opacity: 0;
+  transition: all .5s ease-in-out;
+  transform: translateX(100%)
+}
+#navMenu.active{
+  height:20vh;
+  width:30vw;
+  display:block;
+  opacity: 1;
+  transform: translateX(0)
+ 
+  
+}
+ 
+#listMenu{
+  list-style: none;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  height:100%;
+  padding:0 0 20px 20px;
+  
+}
+
+
+#botaoGerar{
+  width:30%;
+  height:40%;
+  border:1px solid #616161;
+  border-radius: 5px;
+  background:#FFFFFF;
+}
+#botaoGerar:hover{
+  background:#E3E7E7;
+}
+
+
+.areaColor1{
+  display:flex;
+  width: 100%;
+  align-items: end;
+  
+}
+.areaColor input{
+  background:rgba(0,0,0,.1);
+  backdrop-filter: blur(2px);
+  padding:4px;
+  color:#fff;
+  border:none;
+  width:20%;
+  display:flex;
+  text-align:center;
+  border-radius: 0 14px 0 0;
+  outline:none;
+}
+
+
+
+
+.inputColor.active{
+  background:#000;
+  border:1px solid #FFF;
+  
+}
