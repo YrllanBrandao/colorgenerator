@@ -67,6 +67,13 @@ if(areaColor1)
    
    areaHex.value= `${color}`
    
+         //criando os elementos de forma dinâmica
+      
+         const cadeado = document.createElement("div");
+         cadeado.type = "text";
+         cadeado.id = "areaColor1";
+         cadeado.classList.add('padlock')
+         areaColor1.appendChild(cadeado);
    
    
    
@@ -80,6 +87,16 @@ if (areaColor2)
    const areaHex = document.querySelector('.color2');
   
    areaHex.value = `${color}`
+   
+   
+   //criando os elementos de forma dinâmica
+   
+   const cadeado = document.createElement("div");
+   cadeado.type = "text";
+   cadeado.id = "areaColor2";
+   cadeado.classList.add('padlock')
+   areaColor2.appendChild(cadeado);
+   
 }
 if (areaColor3)
 {
@@ -90,6 +107,14 @@ if (areaColor3)
 
  areaHex.value = `${color}`
   
+  
+         //criando os elementos de forma dinâmica
+      
+         const cadeado = document.createElement("div");
+         cadeado.type = "text";
+         cadeado.id = "areaColor3";
+         cadeado.classList.add('padlock')
+         areaColor3.appendChild(cadeado);
 }
 if (areaColor4)
 {
@@ -99,7 +124,16 @@ if (areaColor4)
  
   const areaHex = document.querySelector('.color4');
  
-  areaHex.value = `${color}`
+  areaHex.value = `${color}`;
+  
+  
+         //criando os elementos de forma dinâmica
+      
+         const cadeado = document.createElement("div");
+         cadeado.type = "text";
+         cadeado.id = "areaColor4";
+         cadeado.classList.add('padlock')
+         areaColor4.appendChild(cadeado);
 }
 if (areaColor5)
 {
@@ -109,7 +143,16 @@ if (areaColor5)
   
    const areaHex = document.querySelector('.color5');
   
-   areaHex.value = `${color}`
+   areaHex.value = `${color}`;
+   
+   
+           //criando os elementos de forma dinâmica
+        
+           const cadeado = document.createElement("div");
+           cadeado.type = "text";
+           cadeado.id = "areaColor5";
+           cadeado.classList.add('padlock')
+           areaColor5.appendChild(cadeado);
 }
 
 
@@ -133,8 +176,10 @@ const botaoGerador = document.querySelector('#botaoGerar');
 botaoGerador.addEventListener("click", ()=>{
   
   
-  if (areaColor1)
+ if (areaColor1)
   {
+    if(!areaColor1.classList.contains('locked'))
+    {
     const color = getColor();
     areaColor1.style.background = `${color}`;
   
@@ -143,21 +188,30 @@ botaoGerador.addEventListener("click", ()=>{
     areaHex.value = `${color}`
   
   
-  
+    }
   
   }
+  
   if (areaColor2)
   {
   
+    if(!areaColor2.classList.contains('locked'))
+    {
     const color = getColor();
-    areaColor1.style.background = `${color}`;
+    areaColor2.style.background = `${color}`;
   
     const areaHex = document.querySelector('.color2');
   
     areaHex.value = `${color}`
+    
+    }
   }
+  
   if (areaColor3)
   {
+    
+    if(!areaColor3.classList.contains('locked'))
+    {
     const color = getColor();
     areaColor3.style.background = `${color}`;
   
@@ -165,20 +219,25 @@ botaoGerador.addEventListener("click", ()=>{
   
     areaHex.value = `${color}`
   
+    }
   }
   if (areaColor4)
   {
-  
+      if(!areaColor4.classList.contains('locked'))
+    {
     const color = getColor();
     areaColor4.style.background = `${color}`;
   
     const areaHex = document.querySelector('.color4');
   
-    areaHex.value = `${color}`
+    areaHex.value = `${color}`;
+    
+    }
   }
   if (areaColor5)
   {
-  
+  if(!areaColor5.classList.contains('locked'))
+    {
     const color = getColor();
     areaColor5.style.background = `${color}`;
   
@@ -186,7 +245,7 @@ botaoGerador.addEventListener("click", ()=>{
   
     areaHex.value = `${color}`
   }
-  
+  }
 });
 
 
@@ -229,3 +288,74 @@ inputColor.forEach((input)=>{
   )
   
 });
+
+
+
+//travando uma cor
+
+const padlock = document.querySelectorAll('.padlock');
+
+padlock.forEach((padlk)=>{
+  
+  
+  
+padlk.addEventListener("click",()=>{
+ 
+ 
+ padlk.classList.toggle("active");
+ 
+ 
+ switch(padlk.id)
+ {
+   case "areaColor1":
+    
+    const contem = areaColor1.classList.contains('locked');
+    
+    
+    contem ? areaColor1.classList.remove("locked"): areaColor1.classList.add("locked");
+     break;
+     
+     
+     case "areaColor2":
+     
+     const contem2 = areaColor2.classList.contains('locked');
+     
+     
+     contem2 ? areaColor2.classList.remove("locked") : areaColor2.classList.add("locked");
+     break;
+     
+     case "areaColor3":
+     
+     const contem3 = areaColor3.classList.contains('locked');
+     
+     
+     contem3 ? areaColor3.classList.remove("locked") : areaColor3.classList.add("locked");
+     break;
+     
+     case "areaColor4":
+     
+     const contem4 = areaColor4.classList.contains('locked');
+     
+     
+     contem4 ? areaColor4.classList.remove("locked") : areaColor4.classList.add("locked");
+     break;
+     
+     case "areaColor5":
+     
+     const contem5 = areaColor5.classList.contains('locked');
+     
+     
+     contem5 ? areaColor5.classList.remove("locked") : areaColor5.classList.add("locked");
+     break;
+   
+ }
+ 
+
+ 
+});
+  
+  
+});
+  
+  
+  
