@@ -10,10 +10,10 @@ const getColor = () => {
 
 	for (let i = 1; i < 7; i++) {
 		//gera um valor
-		const alpha = Math.round(Math.random() * (valueColor.length));
-    console.log(alpha)
+		const index = Math.round(Math.random() * (valueColor.length - 1));
+    	console.log(valueColor[index])
 
-		colorTemplate.push(valueColor[alpha]);
+		colorTemplate.push(valueColor[index]);
 
 	}
 
