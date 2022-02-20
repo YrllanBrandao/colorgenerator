@@ -11,7 +11,6 @@ const getColor = () => {
 	for (let i = 1; i < 7; i++) {
 		//gera um valor
 		const index = Math.round(Math.random() * (valueColor.length - 1));
-    	console.log(valueColor[index])
 
 		colorTemplate.push(valueColor[index]);
 
@@ -23,85 +22,24 @@ const getColor = () => {
 };
 
 //gerando cores iniciais
-if (areaColor1) {
-	const color = getColor();
-	areaColor1.style.background = `${color}`;
-
-	const areaHex = document.querySelector(".color1");
-
-	areaHex.value = `${color}`;
-
-	//criando os elementos de forma dinâmica
-
-	const cadeado = document.createElement("div");
-	cadeado.type = "text";
-	cadeado.id = "areaColor1";
-	cadeado.classList.add("padlock");
-	areaColor1.appendChild(cadeado);
-}
-if (areaColor2) {
-	const color = getColor();
-	areaColor1.style.background = `${color}`;
-
-	const areaHex = document.querySelector(".color2");
-
-	areaHex.value = `${color}`;
-
-	//criando os elementos de forma dinâmica
-
-	const cadeado = document.createElement("div");
-	cadeado.type = "text";
-	cadeado.id = "areaColor2";
-	cadeado.classList.add("padlock");
-	areaColor2.appendChild(cadeado);
-}
-if (areaColor3) {
-	const color = getColor();
-	areaColor3.style.background = `${color}`;
-
-	const areaHex = document.querySelector(".color3");
-
-	areaHex.value = `${color}`;
-
-	//criando os elementos de forma dinâmica
-
-	const cadeado = document.createElement("div");
-	cadeado.type = "text";
-	cadeado.id = "areaColor3";
-	cadeado.classList.add("padlock");
-	areaColor3.appendChild(cadeado);
-}
-if (areaColor4) {
-	const color = getColor();
-	areaColor4.style.background = `${color}`;
-
-	const areaHex = document.querySelector(".color4");
-
-	areaHex.value = `${color}`;
-
-	//criando os elementos de forma dinâmica
-
-	const cadeado = document.createElement("div");
-	cadeado.type = "text";
-	cadeado.id = "areaColor4";
-	cadeado.classList.add("padlock");
-	areaColor4.appendChild(cadeado);
-}
-if (areaColor5) {
-	const color = getColor();
-	areaColor5.style.background = `${color}`;
-
-	const areaHex = document.querySelector(".color5");
-
-	areaHex.value = `${color}`;
-
-	//criando os elementos de forma dinâmica
-
-	const cadeado = document.createElement("div");
-	cadeado.type = "text";
-	cadeado.id = "areaColor5";
-	cadeado.classList.add("padlock");
-	areaColor5.appendChild(cadeado);
+if(areaColor1 && areaColor2 && areaColor3 && areaColor4 && areaColor5) {
+	for (let i = 1; i <= 5; i++) {
+		const color = getColor();
+		const area = document.querySelector(`#areaColor${i}`)
+		area.style.background = `${color}`;
+	
+		const areaHex = document.querySelector(`.color${i}`);
+	
+		areaHex.value = `${color}`;
+	
+		//criando os elementos de forma dinâmica
+	
+		const cadeado = document.createElement("div");
+		cadeado.type = "text";
+		cadeado.id = `areaColor${i}`;
+		cadeado.classList.add("padlock");
+		area.appendChild(cadeado);
+	}
 }
 
 //menu Toogle
