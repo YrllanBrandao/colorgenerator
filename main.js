@@ -202,47 +202,6 @@ const padlock = document.querySelectorAll(".padlock");
 padlock.forEach((padlk) => {
 	padlk.addEventListener("click", () => {
 		padlk.classList.toggle("active");
-
-		switch (padlk.id) {
-			case "areaColor1":
-				const contem = areaColor1.classList.contains("locked");
-
-				contem
-					? areaColor1.classList.remove("locked")
-					: areaColor1.classList.add("locked");
-				break;
-
-			case "areaColor2":
-				const contem2 = areaColor2.classList.contains("locked");
-
-				contem2
-					? areaColor2.classList.remove("locked")
-					: areaColor2.classList.add("locked");
-				break;
-
-			case "areaColor3":
-				const contem3 = areaColor3.classList.contains("locked");
-
-				contem3
-					? areaColor3.classList.remove("locked")
-					: areaColor3.classList.add("locked");
-				break;
-
-			case "areaColor4":
-				const contem4 = areaColor4.classList.contains("locked");
-
-				contem4
-					? areaColor4.classList.remove("locked")
-					: areaColor4.classList.add("locked");
-				break;
-
-			case "areaColor5":
-				const contem5 = areaColor5.classList.contains("locked");
-
-				contem5
-					? areaColor5.classList.remove("locked")
-					: areaColor5.classList.add("locked");
-				break;
-		}
+    	document.querySelector(`#${padlk.id}`).classList.toggle('locked')
 	});
 });
