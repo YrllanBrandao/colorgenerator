@@ -56,54 +56,14 @@ menuMobile.addEventListener("click", () => {
 const botaoGerador = document.querySelector("#botaoGerar");
 
 botaoGerador.addEventListener("click", () => {
-	if (areaColor1) {
-		if (!areaColor1.classList.contains("locked")) {
+
+	for (let i = 1; i <= 5; i++) {
+		const area = document.querySelector(`#areaColor${i}`)
+		if (!area.classList.contains("locked")) {
 			const color = getColor();
-			areaColor1.style.background = `${color}`;
+			area.style.background = `${color}`;
 
-			const areaHex = document.querySelector(".color1");
-
-			areaHex.value = `${color}`;
-		}
-	}
-
-	if (areaColor2) {
-		if (!areaColor2.classList.contains("locked")) {
-			const color = getColor();
-			areaColor2.style.background = `${color}`;
-
-			const areaHex = document.querySelector(".color2");
-
-			areaHex.value = `${color}`;
-		}
-	}
-
-	if (areaColor3) {
-		if (!areaColor3.classList.contains("locked")) {
-			const color = getColor();
-			areaColor3.style.background = `${color}`;
-
-			const areaHex = document.querySelector(".color3");
-
-			areaHex.value = `${color}`;
-		}
-	}
-	if (areaColor4) {
-		if (!areaColor4.classList.contains("locked")) {
-			const color = getColor();
-			areaColor4.style.background = `${color}`;
-
-			const areaHex = document.querySelector(".color4");
-
-			areaHex.value = `${color}`;
-		}
-	}
-	if (areaColor5) {
-		if (!areaColor5.classList.contains("locked")) {
-			const color = getColor();
-			areaColor5.style.background = `${color}`;
-
-			const areaHex = document.querySelector(".color5");
+			const areaHex = document.querySelector(`.color${i}`);
 
 			areaHex.value = `${color}`;
 		}
